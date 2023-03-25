@@ -20,7 +20,6 @@ contactFormDB.on('value', function(snapshot) {
     // tbody.innerHTML = '';
     tbody.innerHTML = '';
 
-
     snapshot.forEach(function(childSnapshot) {
     const message = childSnapshot.val();
     const tr = document.createElement('tr');
@@ -57,50 +56,12 @@ contactFormDB.on('value', function(snapshot) {
     tdEdit.appendChild(btnEdit);
     tr.appendChild(tdEdit);
     
-    // btnEdit.addEventListener('click', function(e){
-    //     e.preventDefault();
-    //     const rowId = e.target.parentNode.parentNode.getAttribute('id');
-    //     const rowRef = contactFormDB.child(rowId);
-    //     console.log(message.emailId)
-        
-    //     var dataTarget = childSnapshot.val();
-    //     var modalTitle = document.querySelector('.modal-title');
-    //     var nameModal = document.querySelector('#name');
-    //     var emailModal = document.querySelector('#emailId');
-    //     var msgModal = document.querySelector('#msgContent');
-    //     var btnModal = document.querySelector('#submitModal');
-
-    //     console.log(btnModal + ' <- clicked')
-
-
-    //     nameModal.value = message.name;
-    //     emailModal.value = message.emailId;
-    //     msgModal.value = message.msgContent;
-        
-
-    //     modalTitle.textContent = message.name;
-    //     console.log(modalTitle.textContent)
-
-    //     // const names = 'editei';
-    //     const msg = 'essa mensagem foi editada';
-    //     rowRef.update({ msgContent: msg}
-    //         ).then(()=>{
-    //         console.log('deu certo')
-    //     })
-    //     .catch((error)=>{
-    //         console.log('falhou, ' + error)
-    //     });
-    // });
-
-
-
 
     btnEdit.addEventListener('click', function(e){
       e.preventDefault();
       const rowId = e.target.parentNode.parentNode.getAttribute('id');
       const rowRef = contactFormDB.child(rowId);
       
-      var dataTarget = childSnapshot.val();
       var modalTitle = document.querySelector('.modal-title');
       var nameModal = document.querySelector('#name');
       var emailModal = document.querySelector('#emailId');

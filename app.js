@@ -15,6 +15,9 @@ const firebaseConfig = {
   
   // referencing the database
   const contactFormDB = firebase.database().ref('contactForm');
+  const teacherRef = firebase.database().ref('teachers').push();
+  const studentRef = firebase.database().ref('students').push();
+  
   
   document.getElementById('contactForm').addEventListener('submit', submitForm);
   
@@ -24,10 +27,41 @@ const firebaseConfig = {
     var emailId = getElementValue('emailId');
     var msgContent = getElementValue('msgContent');
     const newMessageRef = contactFormDB.push();
+    const newStudentRef = studentRef.push();
+    const newTeacherRef = teacherRef.push();
+
     const messageId = newMessageRef.getKey(); // retrieve the unique ID
     // console.log(messageId);
     // Set the form data as the value of the new message node
+
+
+    newStudentRef.set({
+
+      name: name,
+      emailId: emailId,
+      msgContent: msgContent
+    })
+    .then(() => {
+      // Clear the form after the data has been added to the database
+      document.getElementById('name').value = '';
+      document.getElementById('emailId').value = '';
+      document.getElementById('msgContent').value = '';
+    
+      // Show a success message to the user
+      alert('Your message has been sent.');
+    
+      // Redirect to teste.html and pass the message ID in the URL query string
+      // window.location.href = "teste.html?name=" + name + "&msgContent=" + msgContent + "&emailId=" + emailId;
+    })
+    .catch(error => {
+      console.error(error);
+      alert('There was an error sending your message. Please try again later.');
+    });
+    
+
+
     newMessageRef.set({
+
       name: name,
       emailId: emailId,
       msgContent: msgContent
@@ -50,12 +84,6 @@ const firebaseConfig = {
     });
     
   
-    // console.log(name, emailId, msgContent);
-    // saveMessage(name, emailId, msgContent);
-      // Redirect to teste.html and pass the message ID in the URL query string
-    // window.location.href = "teste.html?id=" + name;
-    // window.location.href = "teste.html?name=" + name + "&msgContent=" + msgContent + "&emailId=" + emailId;
-
   }
   
   const saveMessage = (name, emailId, msgContent) =>{
