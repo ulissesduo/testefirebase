@@ -99,10 +99,6 @@ contactFormDB.on('value', function(snapshot) {
   });
   
 
-
-
-
-
     const tdDelete = document.createElement('td');
     const btnDelete = document.createElement('a');
     btnDelete.textContent = 'Delete';
