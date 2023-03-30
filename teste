@@ -1,0 +1,46 @@
+
+
+
+
+
+<!-- 
+    <div class="row align-items-center" id="register" style="height: 100vh;">
+      <div class="mx-auto col-10 col-md-8 col-lg-6">
+        <form class="form-example" action="">
+          <div id="signin" class="form-group">
+          <h1>signin</h1>
+            <input type="email" class="form-control username" id="signinEmail" placeholder="enter your email"><br/>
+            <input type="password" class="form-control password" id="signinPassword" placeholder="enter your password"/><br/>
+            <button type="button"  class="btn btn-primary btn-customized mt-4" name="button" id="signin">Singin</button>
+          </div>
+        </form>
+        <hr/>
+      </div>
+    </div> -->
+
+
+<!-- 
+    <div class="row align-items-center" id="login">
+      <div class="mx-auto col-10 col-md-8 col-lg-6" >
+        <form class="tese" action="">
+        <h1>Signup form</h1>
+        <div id="signup-form" class="form-group">
+          <input type="text" class="form-control username" id="username" placeholder="enter your username"/><br/>
+          <input type="email" class="form-control username" id="email" placeholder="enter your email"><br/>
+          <input type="password" class="form-control password" id="password" placeholder="enter your password"/><br/>
+          
+          <div>
+            <p>Forgot your password? <a href="#">Click here!</a></p>
+          </div>
+          <button type="button" class="btn btn-primary btn-customized mt-4" name="button" id="signup">Signup</button>
+        </div>
+        
+    <p>
+      <p id="current-email" style="display:none"></p>
+      <button type="button" id="signout" style="display:none">Signout</button>
+    </p>
+    </form>
+       -->
+
+      
+  

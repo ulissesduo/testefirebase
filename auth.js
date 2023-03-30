@@ -53,7 +53,7 @@ function clickSignupButton(){
   auth.createUserWithEmailAndPassword(email.value, password.value).
   then(function(user){
     console.log(auth.currentUser.email)
-
+    alert('register')
   }, function(error) {
     console.log(error.message);
     // error message show that you need to enable that authentication in firebase
@@ -70,6 +70,8 @@ function clickSignoutButton(){
 var signinEmail = document.querySelector("#signinEmail");
 var signinPassword = document.querySelector("#signinPassword");
 var singinButton = document.querySelector("#signin");
+var form = document.getElementById('login');
+console.log(form);
 
 singinButton.addEventListener("click", clickSigninButton);
 
@@ -77,6 +79,10 @@ function clickSigninButton() {
   auth.signInWithEmailAndPassword(signinEmail.value, signinPassword.value).
   then(function(user){
     console.log(user)
+    
+    form.classList.add('form-example2');
+    // alert('deu')
+    console.log(singinButton)
   }, function(error) {
     console.log(error.message);
     // error message show that you need to enable that authentication in firebase
